@@ -1,0 +1,10 @@
+pytest
+pandas
+scipy
+numpy 
+scikit-learn==1.0.2
+joblib
+uvicorn
+fastapi
+pydantic
+wandb

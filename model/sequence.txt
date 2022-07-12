@@ -1,0 +1,4 @@
+1 - etl (fetch_data, eda, preprocessing)
+2 - data_check_segregation (data_check e data_segregation)
+3 - train
+4 - test
