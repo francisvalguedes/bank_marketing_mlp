@@ -128,7 +128,7 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-#incluidos pelo aluno
+# incluidos pelo autor
 desktop.ini
 backup/
 wandb/
