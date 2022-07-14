@@ -51,7 +51,7 @@ The application uses the workflow shown in BigPicture below. Where is using the 
 
 
 ## The API
-The API is publicly available to users at the link: [API](https://bank-marketing-data-app.herokuapp.com/)
+The API is publicly available to users at the link: [API](https://bank-marketing-mlp.herokuapp.com/)
 
 ## Referencias:
 
