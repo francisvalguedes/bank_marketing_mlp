@@ -1,5 +1,5 @@
-# Bank Marketing Prediction - Decision Tree
-This work is part of the evaluation of theEEC1509 Machine Learning course of the Department of Computer Engineering and Automation Graduate Program in Electrical and Computer Engineering, Federal University of Rio Grande do Norte.
+# Bank Marketing Prediction - A Multilayer Perceptron (MLP) Approach
+This work is part of the evaluation of the EEC1509 Machine Learning course of the Department of Computer Engineering and Automation Graduate Program in Electrical and Computer Engineering, Federal University of Rio Grande do Norte.
 
 ### Team
  - Supervisor: Prof. Ivanovitch (www.linkedin.com/in/ivanovitchm)
