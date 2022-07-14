@@ -9,4 +9,4 @@ fastapi
 pydantic
 wandb
 keras
-tensorflow
+tensorflow-cpu
