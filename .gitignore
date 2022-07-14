@@ -133,3 +133,4 @@ desktop.ini
 backup/
 wandb/
 train.csv
+artifacts/

@@ -14,16 +14,21 @@ import wandb
 import sys
 from source.api.pipeline import FeatureSelector, CategoricalTransformer, NumericalTransformer
 
+import tensorflow as tf
+
 # global variables
 setattr(sys.modules["__main__"], "FeatureSelector", FeatureSelector)
 setattr(sys.modules["__main__"], "CategoricalTransformer", CategoricalTransformer)
 setattr(sys.modules["__main__"], "NumericalTransformer", NumericalTransformer)
 
 # name of the model artifact
-artifact_model_name = "mlops_ivan/decision_tree_bank/model_export:latest"
+artifact_model_name = "mlops_ivan/bank_mlp/model_export:latest"
+artifact_keras_model_name = "mlops_ivan/bank_mlp/keras_model_export:latest"
+
+keras_model_run_path = "mlops_ivan/bank_mlp/2nz728iv"
 
 # initiate the wandb project
-run = wandb.init(project="decision_tree_bank", entity="mlops_ivan",job_type="api")
+run = wandb.init(project="bank_mlp", entity="mlops_ivan",job_type="api")
 
 # create the api
 app = FastAPI()
@@ -74,7 +79,7 @@ class Person(BaseModel):
 @app.get("/", response_class=HTMLResponse)
 async def root():
     return """
-    <p><span style="font-size:28px"><strong>Bank Marketing</strong></span></p>"""\
+    <p><span style="font-size:28px"><strong>Bank Marketing - A Multilayer Perceptron (MLP) Approach</strong></span></p>"""\
     """<p><span style="font-size:20px">The data is related with direct marketing campaigns of"""\
         """ a Portuguese banking institution. The marketing campaigns were based on phone calls."""\
         """ Often, more than one contact to the same client was required, in order to access if the"""\
@@ -84,27 +89,40 @@ async def root():
         """ Dua, D. and Graff, C. (2019). UCI Machine Learning Repository [http://archive.ics.uci.edu/ml]."""\
         """ Irvine, CA: University of California, School of Information and Computer Science.</span></p>"""\
     """ <p><span style="font-size:20px">The model repository is publicly available at:"""\
-        """ <a href="https://github.com/francisvalguedes/bank_marketing.git"> bank_marketing repository</a>.</span></p>"""\
+        """ <a href="https://github.com/francisvalguedes/bank_marketing_mlp"> bank_marketing repository</a>.</span></p>"""\
     """ <p><span style="font-size:20px">The classification goal is to predict if the client will subscribe (yes/no) a term deposit (variable y)."""\
         """ You can access the documentation and test the API from the link:"""\
-        """ <a href="https://bank-marketing-data-app.herokuapp.com/docs"> documentation</a>.</span></p>"""
+        """ <a href="../../docs"> documentation</a>.</span></p>"""
 
 
 # run the model inference and use a Person data structure via POST to the API.
 @app.post("/predict")
 async def get_inference(person: Person):
     
-    # Download inference artifact
+    # Download pipe artifact
     model_export_path = run.use_artifact(artifact_model_name).file()
     pipe = joblib.load(model_export_path)
-    
+
+    # Download inference artifact
+    # keras_model_export_path = run.use_artifact(artifact_keras_model_name).file()
+    # model = joblib.load(keras_model_export_path)
+
+    # restore the raw model file "model.h5" from a specific run
+    best_model = wandb.restore('model.h5', run_path=keras_model_run_path)
+    # restore the model for tf.keras
+    model = tf.keras.models.load_model(best_model.name)
+
+   
     # Create a dataframe from the input feature
     # note that we could use pd.DataFrame.from_dict
     # but due be only one instance, it would be necessary to
     # pass the Index.
-    df = pd.DataFrame([person.dict()])
 
+    person_df = pd.DataFrame([person.dict()])
+
+    person_transformed = pipe.transform(person_df)
+    
     # Predict test data
-    predict = pipe.predict(df)
+    predict = model.predict(person_transformed)
 
     return "no" if predict[0] <= 0.5 else "yes"

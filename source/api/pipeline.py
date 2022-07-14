@@ -8,11 +8,28 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.preprocessing import StandardScaler
 import pandas as pd
 
+def copy_exception(feature_names, exceptions):
+  # this functios return the itens in the feature_names except exceptions
+  # if exceptions do not exist in feature_names it returns all feature_names
+  # Imput: feature_names, exceptions: list
+  # Output: list
+  for exception in exceptions:
+    try:
+      feature_names.remove(exception)
+    except ValueError:
+      pass
+    features_selected = feature_names
+  return features_selected
+
 # Select a Feature
 class FeatureSelector(BaseEstimator, TransformerMixin):
     # Class Constructor
     def __init__(self, feature_names):
-        self.feature_names = feature_names
+      #exceptions = ["contact", "day", 'default', 'loan', 'marital']
+      exceptions = ['default', 'loan']
+      self.feature_names = copy_exception(feature_names, exceptions) 
+      #self.feature_names = feature_names
+
 
     # Return self nothing else to do here
     def fit(self, X, y=None):
