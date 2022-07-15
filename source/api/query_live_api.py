@@ -11,47 +11,47 @@ import json
 # import pprint
 
 #no
-# person = {
-#     "age"       :  58,
-#     "job"       :  "management",
-#     "marital"   :  "married",
-#     "education" :  "tertiary",
-#     "default"   :  "no",
-#     "balance"   :  2143,
-#     "housing"   :  "yes",
-#     "loan"      :  "no",
-#     "contact"   :  "unknown",
-#     "day"       :  5, 
-#     "month"     :  "may",
-#     "duration"  :  261, 
-#     "campaign"  :  1, 
-#     "pdays"     :  -1, 
-#     "previous"  :  0, 
-#     "poutcome"  :  "unknown"
-#     }
-
-#yes
 person = {
-    "age"       :  53,
+    "age"       :  58,
     "job"       :  "management",
     "marital"   :  "married",
     "education" :  "tertiary",
     "default"   :  "no",
-    "balance"   :  583,
-    "housing"   :  "no",
+    "balance"   :  2143,
+    "housing"   :  "yes",
     "loan"      :  "no",
-    "contact"   :  "cellular",
-    "day"       :  17, 
-    "month"     :  "nov",
-    "duration"  :  226, 
+    "contact"   :  "unknown",
+    "day"       :  5, 
+    "month"     :  "may",
+    "duration"  :  261, 
     "campaign"  :  1, 
-    "pdays"     :  184, 
-    "previous"  :  4, 
-    "poutcome"  :  "success"
+    "pdays"     :  -1, 
+    "previous"  :  0, 
+    "poutcome"  :  "unknown"
     }
 
+#yes
+# person = {
+#     "age"       :  53,
+#     "job"       :  "management",
+#     "marital"   :  "married",
+#     "education" :  "tertiary",
+#     "default"   :  "no",
+#     "balance"   :  583,
+#     "housing"   :  "no",
+#     "loan"      :  "no",
+#     "contact"   :  "cellular",
+#     "day"       :  17, 
+#     "month"     :  "nov",
+#     "duration"  :  226, 
+#     "campaign"  :  1, 
+#     "pdays"     :  184, 
+#     "previous"  :  4, 
+#     "poutcome"  :  "success"
+#     }
+
 # url = "http://127.0.0.1:8000"
-url = "https://bank-marketing-data-app.herokuapp.com"
+url = "https://bank-marketing-mlp.herokuapp.com"
 response = requests.post(f"{url}/predict",
                          json=person)
 
