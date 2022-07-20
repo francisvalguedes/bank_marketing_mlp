@@ -15,7 +15,6 @@ import sys
 from source.api.pipeline import FeatureSelector, CategoricalTransformer, NumericalTransformer
 
 import tensorflow as tf
-import tensorflow_addons as tfa
 
 # global variables
 setattr(sys.modules["__main__"], "FeatureSelector", FeatureSelector)
