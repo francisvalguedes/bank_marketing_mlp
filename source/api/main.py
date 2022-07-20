@@ -23,7 +23,7 @@ setattr(sys.modules["__main__"], "NumericalTransformer", NumericalTransformer)
 
 # name of the model artifact
 artifact_model_name = "mlops_ivan/bank_mlp/model_export:latest"
-artifact_keras_model_name = "mlops_ivan/bank_mlp/keras_model_export:latest"
+artifact_keras_model_name = "mlops_ivan/bank_mlp/keras_model_export:v1"
 
 keras_model_run_path = "mlops_ivan/bank_mlp/2nz728iv"
 
