@@ -10,3 +10,4 @@ pydantic
 wandb
 keras
 tensorflow-cpu
+tensorflow-addons
