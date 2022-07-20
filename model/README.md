@@ -48,4 +48,4 @@ The follow results will be shown:
  Test [comic-dragon-175](https://wandb.ai/mlops_ivan/decision_tree_bank/runs/mbpuwfbg/overview?workspace=user-francisvalfgs)  | 0.8961       | 0.345 | 0.6578        | 0.2338     |
 
 ## Caveats and Recommendations
-Some important issues related to dataset imbalances exist, and adequate techniques need to be adopted in order to balance it.
+
