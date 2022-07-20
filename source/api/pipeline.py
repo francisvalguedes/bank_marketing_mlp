@@ -21,7 +21,6 @@ def copy_exception(feature_names, exceptions):
     features_selected = feature_names
   return features_selected
 
-# Select a Feature
 class FeatureSelector(BaseEstimator, TransformerMixin):
     # Class Constructor
     def __init__(self, feature_names):
@@ -29,8 +28,6 @@ class FeatureSelector(BaseEstimator, TransformerMixin):
       exceptions = ['default', 'loan']
       self.feature_names = copy_exception(feature_names, exceptions) 
       #self.feature_names = feature_names
-
-
     # Return self nothing else to do here
     def fit(self, X, y=None):
         return self
@@ -64,6 +61,7 @@ class CategoricalTransformer(BaseEstimator, TransformerMixin):
         # How can I identify what needs to be modified? EDA!!!!
         if self.new_features:
             # df['job'] = df['job']
+
             # Combine similar jobs into categiroes
             df['job'] = df['job'].replace(['management', 'admin.'], 'white-collar')
             df['job'] = df['job'].replace(['services','housemaid'], 'pink-collar')
@@ -72,13 +70,7 @@ class CategoricalTransformer(BaseEstimator, TransformerMixin):
             # minimize the cardinality poutcome
             df['poutcome'] = df['poutcome'].replace(['other'] , 'unknown')
 
-            # Drop 'contact', as every participant has been contacted. 
-            # df.drop('contact', axis=1, inplace=True)
-
-            # day  : last contact day of the month
-            # month: last contact month of year
-            # Drop 'month' as they don't have any intrinsic meaning
-            # df.drop('month', axis=1, inplace=True)
+            # minimize the cardinality month
             df['month'] = df['month'].replace(['feb', 'mar', 'jan'], '1st')
             df['month'] = df['month'].replace(['may', 'jun', 'apr'], '2st')
             df['month'] = df['month'].replace(['jul', 'aug', 'sep'], '3st')
@@ -86,9 +78,8 @@ class CategoricalTransformer(BaseEstimator, TransformerMixin):
 
         # update column names
         self.colnames = df.columns
-
         return df
-
+        
 # transform numerical features
 class NumericalTransformer(BaseEstimator, TransformerMixin):
     # Class constructor method that takes a model parameter as its argument
@@ -121,17 +112,10 @@ class NumericalTransformer(BaseEstimator, TransformerMixin):
     # Use fitted scalers
     def transform(self, X, y=None):
         df = pd.DataFrame(X, columns=self.colnames)
-
-        # day  : last contact day of the month                  # adicionado
-        # Drop 'day' as they don't have any intrinsic meaning
-        # df.drop('day', axis=1, inplace=True)
-
-        # Map padys=-1 into a large value (10000 is used) to indicate that it is so far in the past that it has no effect
-        df.loc[df['pdays'] == -1, 'pdays'] = 10000
-
+        # Map padys=-1 into a large value (1000 is used) to indicate that it is so far in the past that it has no effect
+        df.loc[df['pdays'] == -1, 'pdays'] = 1000
         # update columns name
         self.colnames = df.columns.tolist()
-
         # minmax
         if self.model == 0:
             # transform data
@@ -141,5 +125,4 @@ class NumericalTransformer(BaseEstimator, TransformerMixin):
             df = self.scaler.transform(df)
         else:
             df = df.values
-
         return df

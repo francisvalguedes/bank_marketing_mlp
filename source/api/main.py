@@ -15,6 +15,7 @@ import sys
 from source.api.pipeline import FeatureSelector, CategoricalTransformer, NumericalTransformer
 
 import tensorflow as tf
+import tensorflow_addons as tfa
 
 # global variables
 setattr(sys.modules["__main__"], "FeatureSelector", FeatureSelector)
@@ -103,15 +104,17 @@ async def get_inference(person: Person):
     model_export_path = run.use_artifact(artifact_model_name).file()
     pipe = joblib.load(model_export_path)
 
-    # Download inference artifact
-    # keras_model_export_path = run.use_artifact(artifact_keras_model_name).file()
-    # model = joblib.load(keras_model_export_path)
+    # Download inference artifact keras model
+    # use the latest version of the keras model
+    model_at = run.use_artifact(artifact_keras_model_name)
+    # download the directory in which the model is saved
+    model_dir= model_at.download()
+    model = tf.keras.models.load_model(model_dir)
 
-    # restore the raw model file "model.h5" from a specific run
-    best_model = wandb.restore('model.h5', run_path=keras_model_run_path)
-    # restore the model for tf.keras
-    model = tf.keras.models.load_model(best_model.name)
-
+    # # restore the raw model file "model.h5" from a specific run
+    # best_model = wandb.restore('model.h5', run_path=keras_model_run_path)
+    # # restore the model for tf.keras
+    # model = tf.keras.models.load_model(best_model.name)
    
     # Create a dataframe from the input feature
     # note that we could use pd.DataFrame.from_dict
