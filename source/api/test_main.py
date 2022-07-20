@@ -22,23 +22,23 @@ def test_root():
 def test_get_inference_no():
 
     person = {
-        "age"       :  58,
-        "job"       :  "management",
-        "marital"   :  "married",
+        "age"       :  31,
+        "job"       :  "entrepreneur",
+        "marital"   :  "single",
         "education" :  "tertiary",
         "default"   :  "no",
-        "balance"   :  2143,
-        "housing"   :  "yes",
+        "balance"   :  206,
+        "housing"   :  "no",
         "loan"      :  "no",
-        "contact"   :  "unknown",
-        "day"       :  5, 
-        "month"     :  "may",
-        "duration"  :  261, 
-        "campaign"  :  1, 
+        "contact"   :  "cellular",
+        "day"       :  15, 
+        "month"     :  "jun",
+        "duration"  :  88, 
+        "campaign"  :  2, 
         "pdays"     :  -1, 
         "previous"  :  0, 
         "poutcome"  :  "unknown"
-    }
+        }
 
     r = client.post("/predict", json=person)
     # print(r.json())
