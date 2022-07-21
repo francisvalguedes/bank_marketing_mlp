@@ -9,7 +9,7 @@ This work is part of the evaluation of the EEC1509 Machine Learning course of th
 ## The data
 The data is related with direct marketing campaigns of a Portuguese banking institution. The marketing campaigns were based on phone calls. Often, more than one contact to the same client was required, in order to access if the product (bank term deposit) would be ('yes') or not ('no') subscribed.
 
-![Isso é uma imagem](https://github.com/francisvalguedes/bank_marketing_mlp/blob/master/figures/marketing.png)
+![Isso é uma imagem](/bank_marketing_mlp/blob/master/figures/marketing.png)
 
 teste
 
