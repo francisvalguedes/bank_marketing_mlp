@@ -1,1 +1,1 @@
-web: uvicorn source.api.main:app --host=0.0.0.0 --port=${PORT:-5000}
+web: sh setup.sh && streamlit run streamlit.py && uvicorn source.api.main:app --host=0.0.0.0 --port=${PORT:-5000}
