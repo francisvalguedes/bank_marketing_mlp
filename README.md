@@ -2,7 +2,7 @@
 This work is part of the evaluation of the EEC1509 Machine Learning course of the Department of Computer Engineering and Automation Graduate Program in Electrical and Computer Engineering, Federal University of Rio Grande do Norte.
 
 ### Team
- - Supervisor: Prof. Ivanovitch (www.linkedin.com/in/ivanovitchm)
+ - Supervisor: Prof. Ivanovitch (https://www.linkedin.com/in/ivanovitchm/)
 
  - Developers: Francisval Guedes ([www.linkedin.com/in/francisval](https://www.linkedin.com/in/francisval-guedes-soares-6094772a)), Hareton Gomes ([www.linkedin.com/in/hareton](https://www.linkedin.com/in/hareton-ribeiro-gomes-11123a238/)).
 
