@@ -3,6 +3,10 @@ Creator: Francisval G. & Hareton G., Adapted from version: Ivanovitch Silva
 Date: 30 may 2022
 Create API
 """
+
+# <img src="{{ url_for('static', path='images/marketing.png') }}" alt="" width="30" height="24">
+
+
 # from typing import Union
 from pydantic import BaseModel
 from fastapi.responses import HTMLResponse
@@ -18,8 +22,9 @@ import tensorflow as tf
 import tensorflow_addons as tfa
 
 from fastapi.templating import Jinja2Templates
-from fastapi import APIRouter
+#from fastapi import APIRouter
 from fastapi import Request
+from fastapi.staticfiles import StaticFiles
 
 # global variables
 setattr(sys.modules["__main__"], "FeatureSelector", FeatureSelector)
@@ -34,12 +39,13 @@ artifact_keras_model_name = "mlops_ivan/bank_mlp/keras_model_export:latest"
 # initiate the wandb project
 run = wandb.init(project="bank_mlp", entity="mlops_ivan",job_type="api")
 
-templates = Jinja2Templates(directory="source/api/templates")
-# general_pages_router = APIRouter()
-
 # create the api
 app = FastAPI()
 # app.include_router(general_pages_router)
+app.mount("/static", StaticFiles(directory="source/api/static"), name="static")
+
+templates = Jinja2Templates(directory="source/api/templates")
+# general_pages_router = APIRouter()
 
 # declare request example data using pydantic
 # a person in our dataset has the following attributes
