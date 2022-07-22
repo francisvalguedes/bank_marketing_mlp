@@ -3,10 +3,6 @@ Creator: Francisval G. & Hareton G., Adapted from version: Ivanovitch Silva
 Date: 30 may 2022
 Create API
 """
-
-# <img src="{{ url_for('static', path='images/marketing.png') }}" alt="" width="30" height="24">
-
-
 # from typing import Union
 from pydantic import BaseModel
 from fastapi.responses import HTMLResponse
@@ -93,12 +89,10 @@ class Person(BaseModel):
 #@app.get("/", response_class=HTMLResponse)
 # @general_pages_router.get("/")
 # async def root(request: Request):
-#     result = "Type a number"
-#     return templates.TemplateResponse("root.html", context={'request': request, 'result': result})
 @app.get("/")
 async def home(request: Request):
 	return templates.TemplateResponse("root.html",{"request":request})
-      
+          
     # """
     # <p><span style="font-size:28px"><strong>Bank Marketing - A Multilayer Perceptron (MLP) Approach</strong></span></p>"""\
     # """<p><span style="font-size:20px">The data is related with direct marketing campaigns of"""\
