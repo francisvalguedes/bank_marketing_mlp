@@ -1,9 +1,8 @@
 # Model Card
 ## Model Details
-Francisval Guedes and Hareton Gomes created a decision tree model based on Ivanovitch Silva's model. A complete data pipeline was built using Google Colab, Scikit-Learn and Weights & Bias to train a Decision Tree model. The big-picture of the data pipeline is shown below:
+Francisval Guedes and Hareton Gomes created a Multilayer Perceptron (MLP) model supervised by Ivanovitch Silva's. A complete data pipeline was built using Google Colab, Visual Studio Code, Scikit-Learn, Keras, Tensorflow and Weights & Bias to train a Decision Tree model. The big-picture of the data pipeline is shown below:
 
-![image](https://user-images.githubusercontent.com/104702301/171173276-bc14fbd3-1bb2-4047-9146-4d736264afb2.png)
-
+<img src="../figures/big_picture_model.png" width="800">
 
 
 For the sake of understanding, a simple hyperparameter-tuning was conducted using a Random Sweep of Wandb, and the best hyperparameters values adopted in the train were:
