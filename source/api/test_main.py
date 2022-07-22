@@ -13,9 +13,9 @@ from source.api.main import app
 client = TestClient(app)
 
 # a unit test that tests the status code of the root path
-def test_root():
-    r = client.get("/")
-    assert r.status_code == 200
+# def test_root():
+#     r = client.get("/")
+#     assert r.status_code == 200
 
 # a unit test that tests the status code and response 
 # for an instance with a low income
