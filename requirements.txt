@@ -11,4 +11,3 @@ wandb
 keras
 tensorflow-cpu
 tensorflow-addons
-streamlit
