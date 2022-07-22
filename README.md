@@ -50,10 +50,7 @@ The machine learning model implemented for prediction is the Decision Tree and i
 ## Workflow
 The application uses the workflow shown in BigPicture below. Where is using the artifact stored by the classification model in Wandb and implemented an API from FastAPI. The API is tested with PyTest and deployed with Github Actions making it available on Heroku through automatic CI/CD.
 
-![WhatsApp Image 2022-06-03 at 14 38 17](https://user-images.githubusercontent.com/104702301/171921028-73b700cc-7902-4308-9a25-ee8e331bcf4f.jpeg)
-
-<img src="https://github.com/francisvalguedes/bank_marketing_mlp/blob/master/figures/marketing.png" width="800">
-
+<img src="https://github.com/francisvalguedes/bank_marketing_mlp/blob/master/figures/big_picture_deploy.jpeg" width="800">
 
 ## The API
 The API is publicly available to users at the link: [API](https://bank-marketing-mlp.herokuapp.com/)
