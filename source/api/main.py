@@ -1,6 +1,6 @@
 """
 Creator: Francisval G. & Hareton G., Adapted from version: Ivanovitch Silva
-Date: 30 may 2022
+Date: 20 jul 2022
 Create API
 """
 # from typing import Union
@@ -92,23 +92,8 @@ class Person(BaseModel):
 @app.get("/")
 async def home(request: Request):
 	return templates.TemplateResponse("root.html",{"request":request})
-          
-    # """
-    # <p><span style="font-size:28px"><strong>Bank Marketing - A Multilayer Perceptron (MLP) Approach</strong></span></p>"""\
-    # """<p><span style="font-size:20px">The data is related with direct marketing campaigns of"""\
-    #     """ a Portuguese banking institution. The marketing campaigns were based on phone calls."""\
-    #     """ Often, more than one contact to the same client was required, in order to access if the"""\
-    #     """ product (bank term deposit) would be ('yes') or not ('no') subscribed.</span></p>"""\
-    # """ <p><span style="font-size:20px">The data is publicly available:"""\
-    #     """<a href="http://archive.ics.uci.edu/ml/datasets/Bank+Marketing"> Bank Marketing</a>."""\
-    #     """ Dua, D. and Graff, C. (2019). UCI Machine Learning Repository [http://archive.ics.uci.edu/ml]."""\
-    #     """ Irvine, CA: University of California, School of Information and Computer Science.</span></p>"""\
-    # """ <p><span style="font-size:20px">The model repository is publicly available at:"""\
-    #     """ <a href="https://github.com/francisvalguedes/bank_marketing_mlp"> bank_marketing repository</a>.</span></p>"""\
-    # """ <p><span style="font-size:20px">The classification goal is to predict if the client will subscribe (yes/no) a term deposit (variable y)."""\
-    #     """ You can access the documentation and test the API from the link:"""\
-    #     """ <a href="../../docs"> documentation</a>.</span></p>"""
 
+ 
 # run the model inference and use a Person data structure via POST to the API.
 @app.post("/predict")
 async def get_inference(person: Person):
