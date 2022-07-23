@@ -1,21 +1,29 @@
 # Model Card
 This work is part of the evaluation of the EEC1509 Machine Learning course of the Department of Computer Engineering and Automation Graduate Program in Electrical and Computer Engineering, Federal University of Rio Grande do Norte.
 
- - Developers: Francisval Guedes ([www.linkedin.com/in/francisval](https://www.linkedin.com/in/francisval-guedes-soares-6094772a)), Hareton Gomes ([www.linkedin.com/in/hareton](https://www.linkedin.com/in/hareton-ribeiro-gomes-11123a238/)).
- - Supervisor: Prof. Ivanovitch (https://www.linkedin.com/in/ivanovitchm/)
+Developers: 
+ - Francisval Guedes ([www.linkedin.com/in/francisval](https://www.linkedin.com/in/francisval-guedes-soares-6094772a)),
+ - Hareton Gomes ([www.linkedin.com/in/hareton](https://www.linkedin.com/in/hareton-ribeiro-gomes-11123a238/)).
+
+Supervisor:
+- Prof. Ivanovitch (https://www.linkedin.com/in/ivanovitchm/)
 
 
-The model consists of a Multilayer Perceptron (MLP) for predicting bank marketing output results. It is an improvement of a previous work using [decision tree](https://github.com/francisvalguedes/bank_marketing/tree/master/classification).
+The model consists of a Multilayer Perceptron (MLP) for predicting bank marketing output results. It is an improvement of a previous work using [Decision Tree](https://github.com/francisvalguedes/bank_marketing/tree/master/classification).
 
 ## Links
 
-[This Work Repository - Bank Marketing A Multilayer Perceptron (MLP) Approach](https://github.com/francisvalguedes/bank_marketing_mlp)
+[Medium Report - Bank Marketing A Multilayer Perceptron (MLP) Approach](https://github.com/francisvalguedes/bank_marketing_mlp/tree/master/model)
 
-[This Work Model Card - Bank Marketing A Multilayer Perceptron (MLP) Approach](https://github.com/francisvalguedes/bank_marketing_mlp/tree/master/model)
+[Deployed API - Bank Marketing on Heroku](https://bank-marketing-mlp.herokuapp.com/)
 
+[Repository - Bank Marketing A Multilayer Perceptron (MLP) Approach](https://github.com/francisvalguedes/bank_marketing_mlp)
 
+[Model Card - Bank Marketing A Multilayer Perceptron (MLP) Approach](https://github.com/francisvalguedes/bank_marketing_mlp/tree/master/model)
 
-[Previous Work Model Card - Bank Marketing Decision Tree](https://github.com/francisvalguedes/bank_marketing/tree/master/classification)
+[Previous Work - Model Card - Bank Marketing Decision Tree](https://github.com/francisvalguedes/bank_marketing/tree/master/classification)
+
+[Dataset - University of California, Irvine's website](http://archive.ics.uci.edu/ml/datasets/Bank+Marketing).
 
 ## The data 
 
