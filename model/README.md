@@ -89,7 +89,7 @@ The follow results will be shown:
 ---------------------------------|--------------|--------|---------------|------------|
 Train [sweet-sweep-16](https://wandb.ai/mlops_ivan/bank_mlp/runs/w1v7pskh/overview?workspace=user-francisvalfgs) | 0.88  | 0.83 | 0.80  |  0.86 | 
 Val [sweet-sweep-16](https://wandb.ai/mlops_ivan/decision_tree_bank/runs/mbpuwfbg/overview?workspace=user-francisvalfgs)  | 0.87 | 0.56 | 0.49 | 0.65  |
-Test [sweet-sweep-16](https://wandb.ai/mlops_ivan/bank_mlp/runs/31o42vxk/overview?workspace=user-francisvalfgs)  | 0.87 | 0.53 | 0.47 | 0.62  |
+Test [robust-sun-855](https://wandb.ai/mlops_ivan/bank_mlp/runs/31o42vxk/overview?workspace=user-francisvalfgs)  | 0.87 | 0.53 | 0.47 | 0.62  |
 
 
 ### Confusion matrix
