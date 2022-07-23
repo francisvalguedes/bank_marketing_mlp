@@ -7,7 +7,17 @@ This work is part of the evaluation of the EEC1509 Machine Learning course of th
 
 The model consists of a Multilayer Perceptron (MLP) for predicting bank marketing output results. It is an improvement of a previous work using [decision tree](https://github.com/francisvalguedes/bank_marketing/tree/master/classification).
 
-## The data
+## Links
+
+[This Work Repository - Bank Marketing A Multilayer Perceptron (MLP) Approach](https://github.com/francisvalguedes/bank_marketing_mlp)
+
+[This Work Model Card - Bank Marketing A Multilayer Perceptron (MLP) Approach](https://github.com/francisvalguedes/bank_marketing_mlp/tree/master/model)
+
+
+
+[Previous Work Model Card - Bank Marketing Decision Tree](https://github.com/francisvalguedes/bank_marketing/tree/master/classification)
+
+## The data 
 
 The dataset is related with direct marketing campaigns of a Portuguese banking institution.
 The *data* is from *May 2008 to November 2010* and contains information on an individual's ``marital, age, education, type of work, and more``.
@@ -54,7 +64,7 @@ The dataset under study is split into Train and Test during the ``Segregate`` st
 A complete data pipeline was built using Google Colab, Visual Studio Code, Scikit-Learn, Keras, Tensorflow and Weights & Bias to train a MLP model. The big-picture of the data pipeline is shown below:
 
 <figure>
-<center><img src="../figures/big_picture_model.png" width="600"></center>
+<center><img src="../figures/big_picture_model.png" width="800"></center>
 <figcaption align = "center"><b>Fig.1 - Model big-picture</b></figcaption>
 </figure>
 
@@ -65,13 +75,13 @@ The accentuated imbalance of the output variable led the model to a poor perform
 Balancing the data with oversampling did not bring a significant improvement in the accuracy of the model, but it brought a consistent improvement in the minority class learning evidenced by the F1 Score metric shown below.
 
 <figure>
-<center><img src="../figures/f1_umbal.png" width="300"></center>
+<center><img src="../figures/f1_umbal.png" width="400"></center>
 <figcaption align = "center"><b>Fig.2 - F1 Score chart without oversampling</b></figcaption>
 </figure>
 
 
 <figure>
-<center><img src="../figures/f1_bal.png" width="300"></center>
+<center><img src="../figures/f1_bal.png" width="400"></center>
 <figcaption align = "center"><b>Fig.3 - F1 Score chart with oversampling</b></figcaption>
 </figure>
 
@@ -97,7 +107,7 @@ For the sake of understanding, a hyperparameter-tuning was conducted using the R
 - gradient_cliping = 0.5,
 - bath_norm = 1, (batch normalization)
 
-With recovery of the best model by the F1 validation score metric at epoch 82.
+With recovery of the best model by the F1 validation score metric at epoch 82. Some manual executions were also performed in order to analyze the results of the Sweeps.
 
 Other sets of hyperparameters also yield similar results. However, some observations can be made for the presented problem:
 
@@ -117,22 +127,22 @@ Other sets of hyperparameters also yield similar results. However, some observat
 
 - Setting the stop earlier and for the priority metric and configuring the WandbCallback of the Wandb to restore the best model resulted in significant improvement in the final model;
 
-Some manual executions were also performed in order to analyze the results of the Sweeps.
 
+## Results of the chosen model
 
-
+The figure below shows the graph of the evolution of the model's training curve, indicating a consistent learning without the presence of significant overfitting, although in the presence of noise.
 
 <figure>
-<center><img src="../figures/metrics_charts.png" width="600"></center>
+<center><img src="../figures/metrics_charts.png" width="800"></center>
 <figcaption align = "center"><b>Fig.5 - Training evolution - metrics</b></figcaption>
 </figure>
 
+The figure below shows the graph of the evolution of the model's weights curve, showing suitably limited weights, with a slightly higher range only in the output layer where L2 normalization was not used.
 
 <figure>
-<center><img src="../figures/weights_best.png" width="600"></center>
+<center><img src="../figures/weights_best.png" width="800"></center>
 <figcaption align = "center"><b>Fig.6 - Training evolution - weight </b></figcaption>
 </figure>
-
 
 ## Metrics
 In order to follow the performance of machine learning experiments, the project marked certains stage outputs of the data pipeline as metrics. The metrics adopted are: [accuracy](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.accuracy_score.html), [f1](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html#sklearn.metrics.f1_score), [precision](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.precision_score.html#sklearn.metrics.precision_score), [recall](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.recall_score.html#sklearn.metrics.recall_score).
@@ -148,7 +158,7 @@ Val [sweet-sweep-16](https://wandb.ai/mlops_ivan/decision_tree_bank/runs/mbpuwfb
 Test [robust-sun-855](https://wandb.ai/mlops_ivan/bank_mlp/runs/31o42vxk/overview?workspace=user-francisvalfgs)  | 0.87 | 0.53 | 0.47 | 0.62  |
 
 
-The results of the metrics obtained for the test data present better results in three of the four adopted metrics when compared with previous work [Decision Tree Approach](https://github.com/francisvalguedes/bank_marketing/tree/master/classification) e similar works like [[4]](https://medium.com/@nutanbhogendrasharma/deal-banking-marketing-campaign-dataset-with-machine-learning-9c1f84ad285d) signaling a good generalization of the model.
+The results of the metrics obtained for the test data present better results in *Accuracy*, *F1* and *Precision* metrics when compared with previous work [Decision Tree Approach](https://github.com/francisvalguedes/bank_marketing/tree/master/classification) e similar works like [[4]](https://medium.com/@nutanbhogendrasharma/deal-banking-marketing-campaign-dataset-with-machine-learning-9c1f84ad285d) signaling a good generalization of the model.
 
 ### Confusion matrix
 
