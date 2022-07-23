@@ -24,53 +24,32 @@ Supervisor:
 [Dataset - University of California, Irvine's website](http://archive.ics.uci.edu/ml/datasets/Bank+Marketing).
 
 ## The data
-The data is related with direct marketing campaigns of a Portuguese banking institution. The marketing campaigns were based on phone calls. Often, more than one contact to the same client was required, in order to access if the product (bank term deposit) would be ('yes') or not ('no') subscribed.
+The data is related with direct marketing campaigns of a Portuguese banking institution. The marketing campaigns were based on phone calls. Often, more than one contact to the same client was required, in order to access if the product (bank term deposit) would be ('yes') or not ('no') subscribed. 
 
 <figure>
-<center><img src="../figures/marketing.png" width="800"></center>
+<center><img src="./figures/marketing.png" width="800"></center>
 <figcaption align = "center"><b>Fig.1 - Marketing</b></figcaption>
 </figure>
 
-You can download the data from the [University of California, Irvine's website](http://archive.ics.uci.edu/ml/datasets/Bank+Marketing).
-
-Data attribute information:
-   ##### Bank client data:   
-   1. age (numeric)
-   2. job : type of job (categorical: "admin.","unknown","unemployed","management","housemaid","entrepreneur","student",
-                                       "blue-collar","self-employed","retired","technician","services") 
-   3. marital : marital status (categorical: "married","divorced","single"; note: "divorced" means divorced or widowed)
-   4. education (categorical: "unknown","secondary","primary","tertiary")
-   5. default: has credit in default? (binary: "yes","no")
-   6. balance: average yearly balance, in euros (numeric) 
-   7. housing: has housing loan? (binary: "yes","no")
-   8. loan: has personal loan? (binary: "yes","no")
-   ##### Related with the last contact of the current campaign:
-   9. contact: contact communication type (categorical: "unknown","telephone","cellular") 
-  10. day: last contact day of the month (numeric)
-  11. month: last contact month of year (categorical: "jan", "feb", "mar", ..., "nov", "dec")
-  12. duration: last contact duration, in seconds (numeric)
-   ##### Other attributes:
-  13. campaign: number of contacts performed during this campaign and for this client (numeric, includes last contact)
-  14. pdays: number of days that passed by after the client was last contacted from a previous campaign (numeric, -1 means client was not previously contacted)
-  15. previous: number of contacts performed before this campaign and for this client (numeric)
-  16. poutcome: outcome of the previous marketing campaign (categorical: "unknown","other","failure","success")
-  ##### Output variable (desired target):
-  17. y - has the client subscribed a term deposit? (binary: "yes","no")
-
-
-The classification goal is to predict if the client will subscribe (yes/no) a term deposit (variable y).
+You can download the data from the [University of California, Irvine's website](http://archive.ics.uci.edu/ml/datasets/Bank+Marketing). The classification goal is to predict if the client will subscribe (yes/no) a term deposit (variable y). More details about the data is presented in the [Model Card](https://github.com/francisvalguedes/bank_marketing_mlp/tree/master/model)
 
 ## Machine Learning Model
-The machine learning model implemented for prediction is the Multilayer Perceptron (MLP) Neural Network  and is described in the link: [Model Cards](https://github.com/francisvalguedes/bank_marketing_mlp/tree/master/model).
+The machine learning model implemented is the Multilayer Perceptron (MLP) Neural Network and is described in the [Model Card in model folder i this repository](https://github.com/francisvalguedes/bank_marketing_mlp/tree/master/model).
 
 
 ## Workflow
 The application uses the workflow shown in BigPicture below. Where is using the artifact stored by the classification model in Wandb and implemented an API from FastAPI. The API is tested with PyTest and deployed with Github Actions making it available on Heroku through automatic CI/CD.
 
-<img src="https://github.com/francisvalguedes/bank_marketing_mlp/blob/master/figures/big_picture_deploy.jpeg" width="800">
+<figure>
+<center><img src="./figures/big_picture_deploy.jpeg" width="800"></center>
+<figcaption align = "center"><b>Fig.2 - Deploy Big Picture</b></figcaption>
+</figure>
 
 ## The API
-The API is publicly available to users at the link: [API](https://bank-marketing-mlp.herokuapp.com/)
+The API is publicly available to users at the link: [https://bank-marketing-mlp.herokuapp.com/](https://bank-marketing-mlp.herokuapp.com/). It can be tested by accessing the */docs* tab on the site, or consuming the API for example the file [/souce/api/query_live.py](./souce/api/query_live.py) souce/api/query_live.py that sends a post with the client's data to the server and receives the prediction as a response.
+
+An improvement was implemented in the API in relation to the first work, now the .html file for the presentation of the site is in the Read more [/source/api/templates/root.html](./source/api/templates/root.html) folder, in addition to this, the [/source/api/static/](./source/api/static/) folder was also created can be used to store pictures and other static objects on the server.
+
 
 ## References:
 
