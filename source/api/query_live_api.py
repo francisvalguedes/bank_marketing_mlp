@@ -50,8 +50,8 @@ person = {
     "poutcome"  :  "success"
     }
 
-url = "http://127.0.0.1:8000"
-#url = "https://bank-marketing-mlp.herokuapp.com"
+# url = "http://127.0.0.1:8000"
+url = "https://bank-marketing-mlp.herokuapp.com"
 response = requests.post(f"{url}/predict",
                          json=person)
 
