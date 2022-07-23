@@ -55,7 +55,7 @@ The application uses the workflow shown in BigPicture below. Where is using the 
 ## The API
 The API is publicly available to users at the link: [API](https://bank-marketing-mlp.herokuapp.com/)
 
-## Referencias:
+## References:
 
 [MITCHELL, Margaret et al. Model Cards for Model Reporting, 2019. Accessed May 30, 2022. Avaliable](https://arxiv.org/abs/1810.03993).
 

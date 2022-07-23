@@ -148,7 +148,7 @@ Val [sweet-sweep-16](https://wandb.ai/mlops_ivan/decision_tree_bank/runs/mbpuwfb
 Test [robust-sun-855](https://wandb.ai/mlops_ivan/bank_mlp/runs/31o42vxk/overview?workspace=user-francisvalfgs)  | 0.87 | 0.53 | 0.47 | 0.62  |
 
 
-The results of the metrics obtained for the test data present better results in three of the four adopted metrics, when compared with [Decision Tree Approach](https://github.com/francisvalguedes/bank_marketing/tree/master/classification), signaling a good generalization of the model.
+The results of the metrics obtained for the test data present better results in three of the four adopted metrics when compared with previous work [Decision Tree Approach](https://github.com/francisvalguedes/bank_marketing/tree/master/classification) e similar works like [[4]](https://medium.com/@nutanbhogendrasharma/deal-banking-marketing-campaign-dataset-with-machine-learning-9c1f84ad285d) signaling a good generalization of the model.
 
 ### Confusion matrix
 
@@ -165,12 +165,12 @@ When balancing the data with *SMOTENC*, a lot of noise is generated, as an impro
 
 ## References
 
-[MITCHELL, Margaret et al. Model Cards for Model Reporting, 2019. Accessed May 30, 2022. Avaliable](https://arxiv.org/abs/1810.03993).
+[[1] MITCHELL, Margaret et al. Model Cards for Model Reporting, 2019. Accessed May 30, 2022. Avaliable](https://arxiv.org/abs/1810.03993).
 
-[University of California, Irvine's website](http://archive.ics.uci.edu/ml/datasets/Bank+Marketing).
+[[2] University of California, Irvine's website](http://archive.ics.uci.edu/ml/datasets/Bank+Marketing).
 
-[Bank Marketing Data - A Decision Tree Approach](https://www.kaggle.com/code/shirantha/bank-marketing-data-a-decision-tree-approach/notebook).
+[[3] Bank Marketing Data - A Decision Tree Approach](https://www.kaggle.com/code/shirantha/bank-marketing-data-a-decision-tree-approach/notebook).
 
-[Deal Banking Marketing Campaign Dataset With Machine Learning](https://medium.com/@nutanbhogendrasharma/deal-banking-marketing-campaign-dataset-with-machine-learning-9c1f84ad285d).
+[[4] Deal Banking Marketing Campaign Dataset With Machine Learning](https://medium.com/@nutanbhogendrasharma/deal-banking-marketing-campaign-dataset-with-machine-learning-9c1f84ad285d).
 
-[Repository for EEC1509, a graduate course on PPgEEC about Machine Learning](https://github.com/ivanovitchm/ppgeecmachinelearning).
+[[5] Repository for EEC1509, a graduate course on PPgEEC about Machine Learning](https://github.com/ivanovitchm/ppgeecmachinelearning).
