@@ -111,13 +111,27 @@ Other sets of hyperparameters also yield similar results. However, some observat
 
 - The model showed low overfitting, but the use of L2 normalization led to a more limited range of weights, especially when using high learning rates;
 
-- For the adopted model, weight constriction did not bring good results;
+- For the adopted model, L2 normalization led to better results than weight constriction;
 
 - Confirming the information in the literature on the use of batch normalization, better results were obtained without the use of Dropout;
 
 - Setting the stop earlier and for the priority metric and configuring the WandbCallback of the Wandb to restore the best model resulted in significant improvement in the final model;
 
 Some manual executions were also performed in order to analyze the results of the Sweeps.
+
+
+
+
+<figure>
+<center><img src="../figures/metrics_charts.png" width="600"></center>
+<figcaption align = "center"><b>Fig.5 - Training evolution - metrics</b></figcaption>
+</figure>
+
+
+<figure>
+<center><img src="../figures/weights_best.png" width="600"></center>
+<figcaption align = "center"><b>Fig.6 - Training evolution - weight </b></figcaption>
+</figure>
 
 
 ## Metrics
@@ -134,15 +148,29 @@ Val [sweet-sweep-16](https://wandb.ai/mlops_ivan/decision_tree_bank/runs/mbpuwfb
 Test [robust-sun-855](https://wandb.ai/mlops_ivan/bank_mlp/runs/31o42vxk/overview?workspace=user-francisvalfgs)  | 0.87 | 0.53 | 0.47 | 0.62  |
 
 
+The results of the metrics obtained for the test data present better results in three of the four adopted metrics, when compared with [Decision Tree Approach](https://github.com/francisvalguedes/bank_marketing/tree/master/classification), signaling a good generalization of the model.
+
 ### Confusion matrix
 
 The confusion matrix shown below is implemented with the test data. Where there is an improvement in the learning of the minority class compared to the first work, although there is still a reasonable percentage of false negatives.
 
 <figure>
 <center><img src="../figures/confusion_matrix.png" width="500"></center>
-<figcaption align = "center"><b>Fig.4 - Confusion matrix</b></figcaption>
+<figcaption align = "center"><b>Fig.5 - Confusion matrix</b></figcaption>
 </figure>
 
 ## Caveats and Recommendations
 
-When balancing the data with SMOTENC, a lot of noise is generated, as an improvement, other techniques can be researched in order to reduce the unwanted effects.
+When balancing the data with *SMOTENC*, a lot of noise is generated, as an improvement, other techniques can be researched in order to reduce the unwanted effects.
+
+## References
+
+[MITCHELL, Margaret et al. Model Cards for Model Reporting, 2019. Accessed May 30, 2022. Avaliable](https://arxiv.org/abs/1810.03993).
+
+[University of California, Irvine's website](http://archive.ics.uci.edu/ml/datasets/Bank+Marketing).
+
+[Bank Marketing Data - A Decision Tree Approach](https://www.kaggle.com/code/shirantha/bank-marketing-data-a-decision-tree-approach/notebook).
+
+[Deal Banking Marketing Campaign Dataset With Machine Learning](https://medium.com/@nutanbhogendrasharma/deal-banking-marketing-campaign-dataset-with-machine-learning-9c1f84ad285d).
+
+[Repository for EEC1509, a graduate course on PPgEEC about Machine Learning](https://github.com/ivanovitchm/ppgeecmachinelearning).
