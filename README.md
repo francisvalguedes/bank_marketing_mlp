@@ -46,7 +46,7 @@ The application uses the workflow shown in BigPicture below. Where is using the 
 </figure>
 
 ## The API
-The API is publicly available to users at the link: [https://bank-marketing-mlp.herokuapp.com/](https://bank-marketing-mlp.herokuapp.com/). It can be tested by accessing the */docs* tab on the site, or consuming the API for example the file [/souce/api/query_live.py](./souce/api/query_live_api.py) souce/api/query_live.py that sends a post with the client's data to the server and receives the prediction as a response.
+The API is publicly available to users at the link: [https://bank-marketing-mlp.herokuapp.com/](https://bank-marketing-mlp.herokuapp.com/). It can be tested by accessing the */docs* tab on the site, or consuming the API for example the file [/source/api/query_live_api.py](./source/api/query_live_api.py) that sends a post with the client's data to the server and receives the prediction as a response.
 
 An improvement was implemented in the API in relation to the first work, now the .html file for the presentation of the site is in the Read more [/source/api/templates/root.html](./source/api/templates/root.html) folder, in addition to this, the [/source/api/static/](./source/api/static/) folder was also created can be used to store pictures and other static objects on the server.
 
