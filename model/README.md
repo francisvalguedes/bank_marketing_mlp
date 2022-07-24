@@ -93,8 +93,7 @@ Balancing the data with oversampling did not bring a significant improvement in 
 <figcaption align = "center"><b>Fig.3 - F1 Score chart with oversampling</b></figcaption>
 </figure>
 
-The graph in fig. 4 with oversampling shows a result of the validation curve much higher than that shown in fig. 3. However, a big difference is seen between the training curve and the validation of the F1 score fig. 4(it does not occur in the accuracy and loss curve), this happens because the balance oversampling is applied only to the training data, so the minority class is still little present in the validation data, F1 score . Therefore, it does not consist in the occurrence of overfiting.
-
+The graph with oversampling in fig. 4  shows a result of the validation curve much higher than that shown in fig. 3. However, a big difference is seen between the training curve and the validation of the F1 score fig. 4 (it does not occur in the accuracy and loss curve), this happens because the balance oversampling is applied only to the training data, F1 score is more influenced by minority class and the minority class is still little present in the validation data. Therefore, it does not consist in the occurrence of overfiting.
 
 For prediction, 3 and 4 layer neural network models were analyzed. However, it was found that 3-layer models are sufficient for a good network performance.
 
