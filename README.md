@@ -1,4 +1,4 @@
-# Bank Marketing Prediction - A Multilayer Perceptron (MLP) Approach
+# Bank Marketing Prediction - A Multilayer Perceptron Neural Network Approach
 This work is part of the evaluation of the EEC1509 Machine Learning course of the Department of Computer Engineering and Automation Graduate Program in Electrical and Computer Engineering, Federal University of Rio Grande do Norte.
 
 ### Team
