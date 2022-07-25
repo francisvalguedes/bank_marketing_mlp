@@ -113,6 +113,7 @@ For the sake of understanding, a hyperparameter-tuning was conducted using the R
 - l2_3 = 0.0, (layer 3 - L2 normalization)
 - gradient_cliping = 0.5,
 - bath_norm = 1, (batch normalization)
+- Early Stopping - save best model
 
 With recovery of the best model by the F1 validation score metric at epoch 82. Some manual executions were also performed in order to analyze the results of the Sweeps.
 
