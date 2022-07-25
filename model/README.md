@@ -191,3 +191,6 @@ When balancing the data with *SMOTENC*, a lot of noise is generated, as an impro
 [[4] Deal Banking Marketing Campaign Dataset With Machine Learning](https://medium.com/@nutanbhogendrasharma/deal-banking-marketing-campaign-dataset-with-machine-learning-9c1f84ad285d).
 
 [[5] Repository for EEC1509, a graduate course on PPgEEC about Machine Learning](https://github.com/ivanovitchm/ppgeecmachinelearning).
+
+[[6] Over-sampling A practical guide](https://imbalanced-learn.org/stable/over_sampling.html#smote-adasyn)
+
