@@ -13,6 +13,8 @@ Supervisor:
 
 [Medium Report - Bank Marketing A Multilayer Perceptron (MLP) Approach](https://github.com/francisvalguedes/bank_marketing_mlp/tree/master/model)
 
+[5min. Pitch explaining the API development process (Portuguese)](https://www.loom.com/share/66d438e0654647eebeefb19f94f4394e)
+
 [Deployed API - Bank Marketing on Heroku](https://bank-marketing-mlp.herokuapp.com/)
 
 [Repository - Bank Marketing A Multilayer Perceptron (MLP) Approach](https://github.com/francisvalguedes/bank_marketing_mlp)
