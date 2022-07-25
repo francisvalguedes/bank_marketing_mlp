@@ -134,6 +134,13 @@ Other sets of hyperparameters also yield similar results. However, some observat
 
 - Setting the stop earlier and for the priority metric and configuring the WandbCallback of the Wandb to restore the best model resulted in significant improvement in the final model;
 
+The model block diagram is shown in the following figure.
+
+<figure>
+<center><img src="../figures/model-best.h5.png" width="800"></center>
+<figcaption align = "center"><b>Fig.5 - Model block diagram</b></figcaption>
+</figure>
+
 
 ## Results of the chosen model
 
