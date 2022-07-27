@@ -99,8 +99,9 @@ For prediction, 3 and 4 layer neural network models were analyzed. However, it w
 
 For the sake of understanding, a hyperparameter-tuning was conducted using the Random Sweep of Wandb. Initially, a Sweep with a wide range of hyperparameters was defined, after analyzing the results, an improvement of the best model with a narrower range of hyperparameters was gradually carried out. The best hyperparameters values adopted in the train were:
 
-- layer_1 = 21, (number of layer 1 neurons)
-- layer_2 = 43, (number of layer 2 neurons)
+- layer 1 = 21, (21 neurons, Relu function)
+- layer_2 = 43, (43 neurons, Relu function)
+- layer_3 = 1, (1 neurons, Sigmoid function)
 - learn_rate = 0.073,
 - beta_1=0.99, (Adam's beta 1)
 - beta_2=0.999, (Adam's beta 2)
